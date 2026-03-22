@@ -18,7 +18,7 @@ jobs:
         os: [ ubuntu-latest, windows-latest, macOS-latest ]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
 
     - name: Setup steamcmd
       uses: ./
@@ -35,7 +35,7 @@ jobs:
         os: [ ubuntu-latest ]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
 
     - name: Setup steamcmd
       uses: ./
@@ -83,8 +83,7 @@ jobs:
         +workshop_build_item "${{ github.workspace }}/workshop_build.vdf"
         +quit
 
-    # Wait for next 2FA code
-    # Because same code can't be used more than once
+    # Wait for the next 2FA code, because the same code can't be used more than once
     - name: Wait
       run: sleep 30s
 
